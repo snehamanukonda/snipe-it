@@ -17,6 +17,11 @@
                 <input name="checkout_to_type" value="location" aria-label="checkout_to_type" class="active" type="radio"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ trans('general.location') }}
             </label>
             @endif
+             @if ((isset($department_select)) && ($department_select!='false'))
+            <label class="btn btn-default">
+                <input name="checkout_to_type" value="department" aria-label="checkout_to_type" class="active" type="radio"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ trans('general.department') }}
+            </label>
+            @endif
 
             {!! $errors->first('checkout_to_type', '<span class="alert-msg" aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i> :message</span>') !!}
         </div>
